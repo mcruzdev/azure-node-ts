@@ -16,6 +16,15 @@ app.get("/v1/users", (req: Request, res: Response) => {
   });
 });
 
+app.get("/ping", (req: Request, res: Response) => {
+  return res.status(200).json({
+    info: {
+      port,
+      message: "pong"
+    },
+  })
+})
+
 
 const server = http.createServer(app)
 
